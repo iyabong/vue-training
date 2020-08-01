@@ -1,0 +1,35 @@
+<html>
+<head>
+<script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id='vtDiv'>
+        vue-training
+        <button v-on:click="arrSet">arrSet</button>
+    </div>
+</body>
+<script>
+vtVue = new Vue({
+    el : '#vtDiv',
+    data : {
+        a : 1,
+        b : 2,
+        c : 3,
+
+        testArr : ['a','b','c'],
+        testObj : {
+                        name : 'bong',
+                        age : 36}
+    },
+    created : function() {
+
+    },
+    methods : {
+        arrSet : function() {
+           Vue.set(vtVue.testObj, 'age', 27);
+        }
+    }
+})
+</script>
+</html>
